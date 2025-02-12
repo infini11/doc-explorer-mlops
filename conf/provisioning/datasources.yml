@@ -1,0 +1,16 @@
+apiVersion: 1
+
+datasources:
+  - name: mlops-postgres
+    orgId: 1
+    type: postgres
+    url: postgres:5432
+    database: postgres
+    user: postgres
+    secureJsonData:
+      password: postgres
+    jsonData:
+      sslmode: "disable"
+      postgresVersion: 1100
+      timescaledb: false
+    editable: true

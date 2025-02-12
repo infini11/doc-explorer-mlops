@@ -1,0 +1,15 @@
+
+
+```
+source setup_env.sh
+docker-compose build
+docker-compose up airflow-init
+docker-compose up -d
+```
+
+
+```
+Airflow : http://localhost:8080
+Grafana : http://localhost:3000
+MLFlow  : http://localhost:5000
+```
