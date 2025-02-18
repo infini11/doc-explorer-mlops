@@ -13,3 +13,5 @@ Airflow : http://localhost:8080
 Grafana : http://localhost:3000
 MLFlow  : http://localhost:5000
 ```
+
+export PYTHONPATH=$(pwd)
