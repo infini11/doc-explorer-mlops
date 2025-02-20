@@ -3,8 +3,8 @@ import os, sys
 from sklearn import svm
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from src.sentiment_analysis.data_propocessing import load_data, apply_tfid_vectorizer
-from src.sentiment_analysis.train import train_model
+from src.use_cases.sentiment_analysis.data_propocessing import load_data, apply_tfid_vectorizer
+from src.use_cases.sentiment_analysis.train import train_model
 
 
 @pytest.fixture
