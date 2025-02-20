@@ -2,10 +2,11 @@ import pytest
 import os, sys
 import pandas as pd
 from scipy.sparse import csr_matrix
+from pandas.testing import assert_frame_equal
 
 
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-from src.sentiment_analysis.data_propocessing import load_data, apply_tfid_vectorizer
+from src.use_cases.sentiment_analysis.data_propocessing import load_data, apply_tfid_vectorizer
 
 @pytest.fixture
 def sample_data():
@@ -79,3 +80,5 @@ def test_vectorized_vectors_same_number_rows(sample_data):
     train_vectors, test_vectors = apply_tfid_vectorizer(train_df, test_df)
     
     assert train_vectors.shape[0] > test_vectors.shape[0]    
+    
+

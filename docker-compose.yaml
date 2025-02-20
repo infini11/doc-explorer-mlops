@@ -165,11 +165,12 @@ services:
     depends_on: 
       - postgres
     restart: on-failure
-    command: mlflow server --host 0.0.0.0 --backend-store-uri postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DATABASE_MLFLOW} --default-artifact-root ./mlruns
+    command: mlflow server --host 0.0.0.0 --backend-store-uri postgresql+psycopg2://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DATABASE_MLFLOW} --default-artifact-root /mlruns
     ports: 
       - '${MLFLOW_PORT}:5000'
     volumes: 
       - ./mlruns:/mlruns
+    user: mlflowuser
 
 volumes:
   grafana-storage:
